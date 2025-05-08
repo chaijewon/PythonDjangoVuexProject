@@ -22,7 +22,7 @@ def foodListData(request):
 
     if endPage>totalpage:
         endPage=totalpage
-
+    #[]
     list={
         "fd":fd,
         "curpage":curpage,
@@ -33,7 +33,26 @@ def foodListData(request):
     # food_list:{}
     return JsonResponse(list)
 
-
-
-
-
+def foodDetailData(request):
+    no=request.GET['fno']
+    fno=int(no)
+    fd,content,theme=models.foodDetailData(fno)
+    """
+     fno,name,poster,score,
+     address,phone,
+     parking,time,type,theme,content 
+    """
+    f = {
+      "fno":fd[0],
+      "name":fd[1],
+      "poster":fd[2],
+      "score":fd[3],
+      "address":fd[4],
+      "phone":fd[5],
+      "parking":fd[6],
+      "time":fd[7],
+      "type":fd[8],
+      "theme":theme,
+      "content":content
+    }
+    return JsonResponse(f)

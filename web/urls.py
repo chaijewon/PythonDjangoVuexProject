@@ -5,5 +5,6 @@ from web import views
 # models : DAO
 
 urlpatterns = [
-    path('food_list/', views.foodListData)
+    path('food_list/', views.foodListData),
+    path('food_detail/',views.foodDetailData)
 ]
