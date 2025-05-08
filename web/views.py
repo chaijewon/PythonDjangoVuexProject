@@ -2,6 +2,8 @@ from django.shortcuts import render
 from web import models
 # Create your views here.
 from django.http import JsonResponse
+import numpy as np
+import pandas as pd
 # @RestController
 
 def foodListData(request):
@@ -56,3 +58,6 @@ def foodDetailData(request):
       "content":content
     }
     return JsonResponse(f)
+#C:\springDev\springStudy\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\SpringLastProject\
+def empGraphData():
+    pass
